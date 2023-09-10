@@ -60,3 +60,11 @@ body {
 #messages>li:nth-child(odd) {
     background: #f8ecec;
 }
+
+#e {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #856565;
+} 

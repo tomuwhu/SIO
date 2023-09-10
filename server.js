@@ -11,6 +11,9 @@ io.on('connection', s => {
     s.on('msg', msg => {
         io.emit('msg', msg)
     })
+    s.on('cur', msg => {
+        io.emit('cur', msg)
+    })
 })
 
 server.listen(3000, () => {
