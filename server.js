@@ -1,22 +1,18 @@
-const express = require('express');
-const { createServer } = require('node:http');
-const { join } = require('node:path');
-const { Server } = require('socket.io');
+const express = require('express')
+const { createServer } = require('node:http')
+const { Server } = require('socket.io')
 
-const app = express();
-const server = createServer(app);
-const io = new Server(server);
+const app = express()
+app.use(express.static('client'))
+const server = createServer(app)
+const io = new Server(server)
 
-app.get('/', (req, res) => {
-    res.sendFile(join(__dirname, 'client.html'));
-});
-
-io.on('connection', (socket) => {
-    socket.on('msg', (msg) => {
-        io.emit('msg', msg);
-    });
-});
+io.on('connection', s => {
+    s.on('msg', msg => {
+        io.emit('msg', msg)
+    })
+})
 
 server.listen(3000, () => {
-    console.log('server running at http://localhost:3000');
-});
+    console.log('server running at http://localhost:3000')
+})
