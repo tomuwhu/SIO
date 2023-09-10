@@ -1,6 +1,5 @@
 const socket = io()
 
-const body = document.getElementById('b0')
 const remc = document.getElementById('e')
 const form = document.getElementById('form')
 const input = document.getElementById('input')
@@ -14,9 +13,10 @@ form.addEventListener('submit', e => {
     }
 })
 
-body.addEventListener('mousemove', e => {
+function f(e) {
     socket.emit('cur', { x: e.x, y: e.y })
-})
+    return false
+}
 
 socket.on('msg', msg => {
     const item = document.createElement('li')
