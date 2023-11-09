@@ -23,6 +23,7 @@ socket.on('msg', msg => {
     if (msg.includes('http://') || msg.includes('https://')) {
         const link = document.createElement('a')
         link.setAttribute('href', msg)
+        link.setAttribute('target', '_blank')
         link.textContent = "LINK"
         item.appendChild(link)
     }
