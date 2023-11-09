@@ -24,7 +24,7 @@ socket.on('msg', msg => {
         const link = document.createElement('a')
         link.setAttribute('href', msg)
         link.setAttribute('target', '_blank')
-        link.textContent = "LINK"
+        link.textContent = "L I N K"
         item.appendChild(link)
     }
     else {
