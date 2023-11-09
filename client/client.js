@@ -20,7 +20,7 @@ function f(e) {
 
 socket.on('msg', msg => {
     const item = document.createElement('li')
-    if (msg.includes('http://')) {
+    if (msg.includes('http://') || msg.includes('https://')) {
         const link = document.createElement('a')
         link.setAttribute('href', msg)
         link.textContent = "LINK"
