@@ -70,3 +70,8 @@ body {
     border-radius: 6px;
     background-color: #d94141;
 } 
+a {
+    color: rgb(36, 71, 96);
+    font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
