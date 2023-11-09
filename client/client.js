@@ -20,8 +20,17 @@ function f(e) {
 
 socket.on('msg', msg => {
     const item = document.createElement('li')
-    item.textContent = msg
+    if (msg.includes('http://')) {
+        const link = document.createElement('a')
+        link.setAttribute('href', msg)
+        link.textContent = "LINK"
+        item.appendChild(link)
+    }
+    else {
+        item.textContent = msg
+    }
     messages.appendChild(item)
+
     window.scrollTo(0, document.body.scrollHeight)
 })
 

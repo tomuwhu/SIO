@@ -55,6 +55,8 @@ body {
 #messages>li {
     padding: 0.5rem 1rem;
     background: #ecf7f8;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
 }
 
 #messages>li:nth-child(odd) {
